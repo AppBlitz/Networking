@@ -34,16 +34,18 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass.set("exerciseone.App")
+    mainClass.set("two.App")
 }
 
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
-task<JavaExec>("oneClass") {
 
-   mainClass= "exerciseone.Example" 
+
+task<JavaExec>("twoClass") {
+
+   mainClass= "two.Example" 
 
   classpath =java.sourceSets["main"].runtimeClasspath
 
