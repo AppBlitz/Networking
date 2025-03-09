@@ -30,7 +30,20 @@ public class Client {
   }
 
   public static String inputNumber() {
-    return JOptionPane.showInputDialog("Ingresa un número entre 2 y 30");
+    String auxiliarity = JOptionPane.showInputDialog("Ingrese un número entre 2 y 30");
+    while (verificationNumber(Integer.parseInt(auxiliarity)) != true) {
+      auxiliarity = "";
+      auxiliarity = JOptionPane.showInputDialog("Ingrese un número entre 2 y 30");
+    }
+    return auxiliarity;
+  }
+
+  public static boolean verificationNumber(int number) {
+    if (number >= 2 && number <= 30) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   public static String generateStringBits() {

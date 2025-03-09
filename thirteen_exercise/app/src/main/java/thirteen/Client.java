@@ -29,7 +29,21 @@ public class Client {
   }
 
   public static String inputNumber() {
-    return JOptionPane.showInputDialog("Ingresa un número entre 2 y 30");
+    String auxiliary = JOptionPane.showInputDialog("Ingresa un número entre 2 y 30");
+    while (verificationNUmber(Integer.parseInt(auxiliary)) != true) {
+      auxiliary = "";
+      auxiliary = JOptionPane.showInputDialog("Ingresa un número entre 2 y 30");
+    }
+    return auxiliary;
+
+  }
+
+  public static boolean verificationNUmber(int number) {
+    if (number >= 2 && number <= 30) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   public static String generateStringBits() {
