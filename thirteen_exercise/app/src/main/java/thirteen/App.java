@@ -3,12 +3,65 @@
  */
 package thirteen;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
+    public static void main(String[] args) throws IOException {
+
+        ServerSocket listener = new ServerSocket(3400);
+
+        System.out.println("The Echo TCP server is running on port 3400 ...");
+
+        System.out.println("The server is waiting for a client.");
+
+        Socket serverSideSocket = listener.accept();
+
+        System.out.println("A client has connected.");
+
+        BufferedReader fromNetwork = new BufferedReader(new InputStreamReader(serverSideSocket.getInputStream()));
+
+        PrintWriter toNetwork = new PrintWriter(serverSideSocket.getOutputStream(), true);
+
+        String message = fromNetwork.readLine();
+
+        System.out.println("[Server] From client: " + message);
+
+        String answer = message;
+        String[] answer_one = answer.split(":");
+
+        toNetwork.println(convertingStringToZero(answer_one[0], Integer.parseInt(answer_one[1])));
+
+        serverSideSocket.close();
+        listener.close();
+
     }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+    public static String convertingStringToZero(String string, int end) {
+        String auxiliary_one = calculatingString(string, 0, end);
+        String auxiliary_two = calculatingString(string, end, string.length());
+        return auxiliary_one + convertingAZero(auxiliary_two);
+    }
+
+    public static int lenghtString(String subString) {
+        return subString.length();
+    }
+
+    public static String calculatingString(String string, int init, int end) {
+        return string.substring(init, end);
+    }
+
+    public static String convertingAZero(String subString) {
+        int lenght = lenghtString(subString);
+        String auxiliary = "";
+        for (int i = 1; i <= lenght;) {
+            auxiliary += 1;
+            i += 1;
+        }
+        return auxiliary;
     }
 }
