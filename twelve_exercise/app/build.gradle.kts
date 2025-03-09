@@ -43,7 +43,7 @@ tasks.named<Test>("test") {
 }
 
 
-task<javaExec>("oneClass"){
-mainClass="exercise.Example"
-  classpath =java.sourceSets["main"].runtimeClasspath
+task<JavaExec>("thelweClass"){
+    mainClass="exercise.Client"
+    classpath =java.sourceSets["main"].runtimeClasspath
 }
