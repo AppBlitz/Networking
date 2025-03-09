@@ -3,12 +3,64 @@
  */
 package exercise;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
+    public static void main(String[] args) throws IOException {
+
+        ServerSocket listener = new ServerSocket(3400);
+
+        System.out.println("The Echo TCP server is running on port 3400 ...");
+
+        System.out.println("The server is waiting for a client.");
+
+        Socket serverSideSocket = listener.accept();
+
+        System.out.println("A client has connected.");
+
+        BufferedReader fromNetwork = new BufferedReader(new InputStreamReader(serverSideSocket.getInputStream()));
+
+        PrintWriter toNetwork = new PrintWriter(serverSideSocket.getOutputStream(), true);
+
+        String message = fromNetwork.readLine();
+
+        System.out.println("[Server] From client: " + message);
+
+        String message1 = message;
+        String[] answer = message1.split(":");
+
+        toNetwork.println(addDigitsResponse(Integer.parseInt(answer[0]), Integer.parseInt(answer[1])));
+
+        serverSideSocket.close();
+        listener.close();
+
     }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+    public static String convertIntaHexa(int number) {
+
+        return reverseString(Integer.toHexString(number));
+    }
+
+    public static String addDigitsResponse(int number, int amountDigits) {
+
+        String hexa = convertIntaHexa(number);
+        for (int i = (amountDigits - hexa.length()); i > 0;) {
+            hexa = hexa + 0;
+            i -= 1;
+        }
+        return reverseString((hexa));
+    }
+
+    public static String reverseString(String hexa) {
+        String auxiliary = "";
+        for (int i = hexa.length() - 1; i >= 0; i -= 1) {
+            auxiliary = auxiliary + hexa.charAt(i);
+        }
+        return auxiliary;
     }
 }
