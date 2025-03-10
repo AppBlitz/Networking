@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/eight_exercise" />
+        <option name="gradleJvm" value="corretto-20" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/eight_exercise" />
             <option value="$PROJECT_DIR$/eight_exercise/app" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/nine_exercise" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/nine_exercise" />
+            <option value="$PROJECT_DIR$/nine_exercise/app" />
           </set>
         </option>
       </GradleProjectSettings>

@@ -14,7 +14,6 @@ public class EchoTCPServer {
             ServerSocket listener = new ServerSocket(3400);
             System.out.println("The Echo TCP server is running on port 3400 ...");
             System.out.println("The server is waiting for a client.");
-            listener.setSoTimeout(10000);
             Socket serverSideSocket = listener.accept();
             System.out.println("A client has connected");
             BufferedReader fromNetwork = new BufferedReader(new
