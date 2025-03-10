@@ -5,7 +5,8 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/eight_exercise" />
-        <option name="gradleJvm" value="corretto-20" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../gradle/gradle-8.13-all/gradle-8.13" />
+        <option name="gradleJvm" value="21" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/eight_exercise" />
@@ -15,6 +16,7 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/nine_exercise" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../gradle/gradle-8.13-all/gradle-8.13" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/nine_exercise" />
@@ -24,10 +26,20 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/seven_exercise" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../gradle/gradle-8.13-all/gradle-8.13" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/seven_exercise" />
             <option value="$PROJECT_DIR$/seven_exercise/app" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ten_exercise" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ten_exercise" />
+            <option value="$PROJECT_DIR$/ten_exercise/app" />
           </set>
         </option>
       </GradleProjectSettings>
