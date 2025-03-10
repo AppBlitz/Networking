@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class EchoTCPClient {
@@ -18,7 +19,7 @@ public class EchoTCPClient {
             BufferedReader fromNetwork = new BufferedReader(new
                     InputStreamReader(clientSideSocket.getInputStream()));
             System.out.print("Ingrese cualquier cosa");
-            String cualquierCosa=scanerBacano.nextLine();
+            ArrayList<String> cualquierCosa=new ArrayList<>();
             boolean centinela=true;
             while(centinela)
             {
@@ -27,9 +28,12 @@ public class EchoTCPClient {
                 {
                     centinela=false;
                 }
-                cualquierCosa+="\n"+mensajeApoyo;
+                else
+                {
+                    cualquierCosa.add(mensajeApoyo);
+                }
             }
-            toNetwork.println(cualquierCosa);
+            toNetwork.println(cualquierCosa.toString());
             String fromServer = fromNetwork.readLine();
             System.out.println("[Client] From server: " + fromServer);
             scanerBacano.close();
