@@ -44,6 +44,15 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/six_exercise" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/six_exercise" />
+            <option value="$PROJECT_DIR$/six_exercise/app" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/ten_exercise" />
         <option name="modules">
           <set>
