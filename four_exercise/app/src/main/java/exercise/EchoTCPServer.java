@@ -10,15 +10,14 @@ public class EchoTCPServer {
     public static void main(String[] args) throws IOException {
         ServerSocket listener = new ServerSocket(3400);
         System.out.println("The Echo TCP server is running on port 3400 ...");
+        System.out.println("La direccion Ip del servidor es"+listener.getInetAddress().getHostAddress());
+        System.out.print("El puerto local del servidor es "+listener.getLocalPort());
         System.out.println("The server is waiting for a client.");
         Socket serverSideSocket = listener.accept();
         System.out.println("A client has connected");
         BufferedReader fromNetwork = new BufferedReader(new
                 InputStreamReader(serverSideSocket.getInputStream()));
         PrintWriter toNetwork = new PrintWriter(serverSideSocket.getOutputStream(), true);
-        System.out.println("La direccion Ip del servidor es"+serverSideSocket.getInetAddress().getHostAddress());
-        System.out.print("El puerto local del cliente es "+serverSideSocket.getLocalPort());
-        System.out.print("El puerto del cliente es "+serverSideSocket.getPort());
         String message = fromNetwork.readLine();
         System.out.println("[Server] From client: " + message);
         String answer = message;
