@@ -14,10 +14,10 @@ public class EchoTCPClient {
         PrintWriter toNetwork = new PrintWriter(clientSideSocket.getOutputStream(), true);
         BufferedReader fromNetwork = new BufferedReader(new
                 InputStreamReader(clientSideSocket.getInputStream()));
-        Scanner scanerBacano=new Scanner(System.in);
-        System.out.print("Ingrese cualquier cosa");
-        String cualquierCosa=scanerBacano.nextLine();
-        toNetwork.println(cualquierCosa);
+        System.out.println("La direccion Ip del cliente es"+clientSideSocket.getInetAddress().getHostAddress());
+        System.out.print("El puerto local del cliente es "+clientSideSocket.getLocalPort());
+        System.out.print("El puerto del cliente es "+clientSideSocket.getPort());
+        toNetwork.println("Mensaje enviado desde el servidor");
         String fromServer = fromNetwork.readLine();
         System.out.println("[Client] From server: " + fromServer);
         clientSideSocket.close();

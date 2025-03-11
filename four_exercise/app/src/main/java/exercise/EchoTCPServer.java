@@ -16,6 +16,9 @@ public class EchoTCPServer {
         BufferedReader fromNetwork = new BufferedReader(new
                 InputStreamReader(serverSideSocket.getInputStream()));
         PrintWriter toNetwork = new PrintWriter(serverSideSocket.getOutputStream(), true);
+        System.out.println("La direccion Ip del servidor es"+serverSideSocket.getInetAddress().getHostAddress());
+        System.out.print("El puerto local del cliente es "+serverSideSocket.getLocalPort());
+        System.out.print("El puerto del cliente es "+serverSideSocket.getPort());
         String message = fromNetwork.readLine();
         System.out.println("[Server] From client: " + message);
         String answer = message;
