@@ -10,13 +10,10 @@ import java.util.Scanner;
 
 public class EchoTCPClient {
     public static void main(String[] args) throws IOException {
-        Socket clientSideSocket = new Socket("192.168.56.1", 3400);
+        Socket clientSideSocket = new Socket("192.168.1.1", 3400);
         PrintWriter toNetwork = new PrintWriter(clientSideSocket.getOutputStream(), true);
         BufferedReader fromNetwork = new BufferedReader(new
                 InputStreamReader(clientSideSocket.getInputStream()));
-        System.out.println("La direccion Ip del cliente es"+clientSideSocket.getInetAddress().getHostAddress());
-        System.out.print("El puerto local del cliente es "+clientSideSocket.getLocalPort());
-        System.out.print("El puerto del cliente es "+clientSideSocket.getPort());
         toNetwork.println("Mensaje enviado desde el servidor");
         String fromServer = fromNetwork.readLine();
         System.out.println("[Client] From server: " + fromServer);
