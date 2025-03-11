@@ -14,10 +14,7 @@ public class EchoTCPClient {
         PrintWriter toNetwork = new PrintWriter(clientSideSocket.getOutputStream(), true);
         BufferedReader fromNetwork = new BufferedReader(new
                 InputStreamReader(clientSideSocket.getInputStream()));
-        Scanner scanerBacano=new Scanner(System.in);
-        System.out.print("Ingrese cualquier cosa");
-        String cualquierCosa=scanerBacano.nextLine();
-        toNetwork.println(cualquierCosa);
+        toNetwork.println("Conexion encontrada, enviando mensaje desde el servidor");
         String fromServer = fromNetwork.readLine();
         System.out.println("[Client] From server: " + fromServer);
         clientSideSocket.close();

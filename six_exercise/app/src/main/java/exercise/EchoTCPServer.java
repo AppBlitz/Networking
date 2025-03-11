@@ -13,6 +13,9 @@ public class EchoTCPServer {
         System.out.println("The server is waiting for a client.");
         Socket serverSideSocket = listener.accept();
         System.out.println("A client has connected");
+        System.out.println("La direccion Ip del cliente es: "+ serverSideSocket.getInetAddress().getHostAddress());
+        System.out.println("El puerto local al que esta conectado el cliente es: "+serverSideSocket.getLocalPort());
+        System.out.println("El puerto al que esta conectado el cliente es: "+serverSideSocket.getPort());
         BufferedReader fromNetwork = new BufferedReader(new
                 InputStreamReader(serverSideSocket.getInputStream()));
         PrintWriter toNetwork = new PrintWriter(serverSideSocket.getOutputStream(), true);

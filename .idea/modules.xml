@@ -3,10 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Networking.iml" filepath="$PROJECT_DIR$/.idea/Networking.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/exercise.iml" filepath="$PROJECT_DIR$/.idea/modules/exercise.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/exercise.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/exercise.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/exercise.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/exercise.app.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/exercise.app.test.iml" filepath="$PROJECT_DIR$/.idea/modules/app/exercise.app.test.iml" />
     </modules>
   </component>
 </project>
