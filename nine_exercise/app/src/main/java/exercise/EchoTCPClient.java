@@ -10,26 +10,20 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class EchoTCPClient {
-    public static void main(String[] args)  {
-        try
-        {
+    public static void main(String[] args) {
+        try {
             Socket clientSideSocket = new Socket("localhost", 3400);
-            Scanner scanerBacano=new Scanner(System.in);
+            Scanner scanerBacano = new Scanner(System.in);
             PrintWriter toNetwork = new PrintWriter(clientSideSocket.getOutputStream(), true);
-            BufferedReader fromNetwork = new BufferedReader(new
-                    InputStreamReader(clientSideSocket.getInputStream()));
+            BufferedReader fromNetwork = new BufferedReader(new InputStreamReader(clientSideSocket.getInputStream()));
             System.out.print("Ingrese cualquier cosa");
-            ArrayList<String> cualquierCosa=new ArrayList<>();
-            boolean centinela=true;
-            while(centinela)
-            {
-                String mensajeApoyo=scanerBacano.nextLine();
-                if(mensajeApoyo.isEmpty())
-                {
-                    centinela=false;
-                }
-                else
-                {
+            ArrayList<String> cualquierCosa = new ArrayList<>();
+            boolean centinela = true;
+            while (centinela) {
+                String mensajeApoyo = scanerBacano.nextLine();
+                if (mensajeApoyo.isEmpty()) {
+                    centinela = false;
+                } else {
                     cualquierCosa.add(mensajeApoyo);
                 }
             }
@@ -38,9 +32,7 @@ public class EchoTCPClient {
             System.out.println("[Client] From server: " + fromServer);
             scanerBacano.close();
             clientSideSocket.close();
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
 

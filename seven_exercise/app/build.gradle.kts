@@ -41,3 +41,13 @@ tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+task<JavaExec>("client") {
+
+   mainClass= "seven.EchoTCPClient" 
+
+  classpath =java.sourceSets["main"].runtimeClasspath
+
+  // arguments to pass to the application
+  // args=lifeOf("appArgs1")
+}
